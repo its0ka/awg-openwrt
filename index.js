@@ -2,9 +2,9 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const core = require('@actions/core');
 
-const version = process.argv[2]; // Получение версии OpenWRT из аргумента командной строки
-const filterTargetsStr = process.argv[3] || ''; // Фильтр по targets (опционально, через запятую)
-const filterSubtargetsStr = process.argv[4] || ''; // Фильтр по subtargets (опционально, через запятую)
+const version = '123'
+const filterTargetsStr = process.argv[2] || ''; // Фильтр по targets (опционально, через запятую)
+const filterSubtargetsStr = process.argv[3] || ''; // Фильтр по subtargets (опционально, через запятую)
 
 // Преобразуем строки с запятыми в массивы
 const filterTargets = filterTargetsStr ? filterTargetsStr.split(',').map(t => t.trim()).filter(t => t) : [];
@@ -18,12 +18,8 @@ const excludedBuilds = [
   },
 ];
 
-if (!version) {
-  core.setFailed('Version argument is required');
-  process.exit(1);
-}
 
-const url = `https://downloads.openwrt.org/snapshots/${version}/targets/`;
+const url = `https://downloads.openwrt.org/snapshots/targets/`;
 
 async function fetchHTML(url) {
   try {
