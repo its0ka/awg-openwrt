@@ -76,7 +76,7 @@ EOF
   version_url="$BASE_URL/$version"
   target_url="$version_url/$target"
   subtarget_url="$target_url/$subtarget"
-  openwrt_target_url="https://downloads.openwrt.org/releases/$version/targets/$target/$subtarget/"
+  openwrt_target_url="https://downloads.openwrt.org/snapshots/$version/targets/$target/$subtarget/"
 
   if ! grep -q "($version_url/)" "$SITE_DIR/index.md"; then
     printf -- '- [%s](%s/)\n' "$version" "$version_url" >> "$SITE_DIR/index.md"
