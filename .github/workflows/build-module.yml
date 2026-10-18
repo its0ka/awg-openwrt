@@ -1,4 +1,10 @@
 name: Create Release on Tag
+# Source - https://stackoverflow.com/a/77739543
+# Posted by Skenvy, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-10-18, License - CC BY-SA 4.0
+
+permissions:
+  contents: write
 
 on:
   push:
